@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="shoppaulModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'shoppaul.dbo.product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="soft_launch" />
+          </Key>
+          <Property Name="ID" Type="float" />
+          <Property Name="artwork_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="image_name_prefix" Type="nvarchar" MaxLength="255" />
+          <Property Name="title" Type="nvarchar" MaxLength="255" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="type" Type="nvarchar" MaxLength="255" />
+          <Property Name="vendor" Type="float" />
+          <Property Name="price_parent" Type="nvarchar" MaxLength="255" />
+          <Property Name="weight" Type="nvarchar" MaxLength="50" />
+          <Property Name="is_pixfizz_customizable" Type="nvarchar" MaxLength="50" />
+          <Property Name="tags" Type="nvarchar" MaxLength="255" />
+          <Property Name="soft_launch" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="shoppaulModelStoreContainer">
+          <EntitySet Name="product" EntityType="Self.product" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [product].[ID] AS [ID], 
+    [product].[artwork_name] AS [artwork_name], 
+    [product].[image_name_prefix] AS [image_name_prefix], 
+    [product].[title] AS [title], 
+    [product].[description] AS [description], 
+    [product].[type] AS [type], 
+    [product].[vendor] AS [vendor], 
+    [product].[price_parent] AS [price_parent], 
+    [product].[weight] AS [weight], 
+    [product].[is_pixfizz_customizable] AS [is_pixfizz_customizable], 
+    [product].[tags] AS [tags], 
+    [product].[soft_launch] AS [soft_launch]
+    FROM [dbo].[product] AS [product]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="shoppaulModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="soft_launch" />
+          </Key>
+          <Property Name="ID" Type="Double" />
+          <Property Name="artwork_name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="image_name_prefix" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="vendor" Type="Double" />
+          <Property Name="price_parent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="weight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="is_pixfizz_customizable" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tags" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="soft_launch" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SPContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="products" EntityType="Self.product" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="shoppaulModelStoreContainer" CdmEntityContainer="SPContext">
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="shoppaulModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="artwork_name" ColumnName="artwork_name" />
+                <ScalarProperty Name="image_name_prefix" ColumnName="image_name_prefix" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="vendor" ColumnName="vendor" />
+                <ScalarProperty Name="price_parent" ColumnName="price_parent" />
+                <ScalarProperty Name="weight" ColumnName="weight" />
+                <ScalarProperty Name="is_pixfizz_customizable" ColumnName="is_pixfizz_customizable" />
+                <ScalarProperty Name="tags" ColumnName="tags" />
+                <ScalarProperty Name="soft_launch" ColumnName="soft_launch" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

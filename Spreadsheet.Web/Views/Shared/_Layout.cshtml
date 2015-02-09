@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - DB Spreadsheet</title>
+   
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/slidemenu")
+    @Scripts.Render("~/bundles/spreadsheet")
+    <link href="~/external/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+    
+    <script src="~/external/jquery.hotkeys.js"></script>
+
+    
+    <script src="~/external/google-code-prettify/prettify.js"></script>
+</head>
+@*<body class="cbp-spmenu-push">*@
+<body>
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+        <h3>Spreadsheet</h3>
+        <a href="#">Settings</a>
+        @*<a href="#">Dulse daikon</a>
+        <a href="#">Zucchini garlic</a>
+        <a href="#">Catsear azuki bean</a>
+        <a href="#">Dandelion bunya</a>
+        <a href="#">Rutabaga</a>*@
+    </nav>
+   
+    <!-- Classie - class helper functions by desandro https://github.com/desandro/classie -->
+    @*<section class="buttonset">
+        <div class="attached-button" id="showLeftPush">
+            <span class="glyphicon" style="color:white;"></span>
+        </div>
+        <section style="display:none">
+            <h2>Slide Menus</h2>
+             Class "cbp-spmenu-open" gets applied to menu 
+            <button id="showLeft">Show/Hide Left Slide Menu</button>
+            <button id="showRight">Show/Hide Right Slide Menu</button>
+            <button id="showTop">Show/Hide Top Slide Menu</button>
+            <button id="showBottom">Show/Hide Bottom Slide Menu</button>
+            <button id="showLeftPush">Show/Hide Left Push Menu</button>
+            <button id="showRightPush">Show/Hide Right Push Menu</button>
+        </section>
+    </section>*@
+    
+    <div class="container-fluid body-content">
+        @*<header class="clearfix" style="margin:0px 20px;">
+            @*<span>Blueprint</span>
+            <h1>DB Spreadsheet</h1>
+            
+        </header>*@
+            @RenderBody()
+            @*<hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>*@
+        </div>
+
+   
+    @RenderSection("scripts", required: false)
+    <script>
+        //$(document).ready(function () {
+        //    $('.glyphicon').addClass('glyphicon-chevron-right');
+        //    $('#showLeftPush').click(function () {
+        //        $('.glyphicon').toggleClass('glyphicon-chevron-right');
+        //        $('.glyphicon').addClass('glyphicon glyphicon-chevron-left');
+        //        //
+        //    });
+        //});
+        //var menuLeft = document.getElementById('cbp-spmenu-s1'),
+        //    menuRight = document.getElementById('cbp-spmenu-s2'),
+        //    menuTop = document.getElementById('cbp-spmenu-s3'),
+        //    menuBottom = document.getElementById('cbp-spmenu-s4'),
+        //    showLeft = document.getElementById('showLeft'),
+        //    showRight = document.getElementById('showRight'),
+        //    showTop = document.getElementById('showTop'),
+        //    showBottom = document.getElementById('showBottom'),
+        //    showLeftPush = document.getElementById('showLeftPush'),
+        //    showRightPush = document.getElementById('showRightPush'),
+        //    body = document.body;
+
+        //showLeft.onclick = function () {
+        //    classie.toggle(this, 'active');
+        //    classie.toggle(menuLeft, 'cbp-spmenu-open');
+        //    disableOther('showLeft');
+        //};
+        //showRight.onclick = function () {
+        //    classie.toggle(this, 'active');
+        //    classie.toggle(menuRight, 'cbp-spmenu-open');
+        //    disableOther('showRight');
+        //};
+        //showTop.onclick = function () {
+        //    classie.toggle(this, 'active');
+        //    classie.toggle(menuTop, 'cbp-spmenu-open');
+        //    disableOther('showTop');
+        //};
+        //showBottom.onclick = function () {
+        //    classie.toggle(this, 'active');
+        //    classie.toggle(menuBottom, 'cbp-spmenu-open');
+        //    disableOther('showBottom');
+        //};
+        //showLeftPush.onclick = function () {
+        //    classie.toggle(this, 'active');
+        //    classie.toggle(body, 'cbp-spmenu-push-toright');
+        //    classie.toggle(menuLeft, 'cbp-spmenu-open');
+        //    disableOther('showLeftPush');
+        //};
+        //showRightPush.onclick = function () {
+        //    classie.toggle(this, 'active');
+        //    classie.toggle(body, 'cbp-spmenu-push-toleft');
+        //    classie.toggle(menuRight, 'cbp-spmenu-open');
+        //    disableOther('showRightPush');
+        //};
+
+        //function disableOther(button) {
+        //    if (button !== 'showLeft') {
+        //        classie.toggle(showLeft, 'disabled');
+        //    }
+        //    if (button !== 'showRight') {
+        //        classie.toggle(showRight, 'disabled');
+        //    }
+        //    if (button !== 'showTop') {
+        //        classie.toggle(showTop, 'disabled');
+        //    }
+        //    if (button !== 'showBottom') {
+        //        classie.toggle(showBottom, 'disabled');
+        //    }
+        //    if (button !== 'showLeftPush') {
+        //        classie.toggle(showLeftPush, 'disabled');
+        //    }
+        //    if (button !== 'showRightPush') {
+        //        classie.toggle(showRightPush, 'disabled');
+        //    }
+        //}
+    </script>
+</body>
+</html>

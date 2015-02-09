@@ -1,0 +1,7 @@
+Spreadsheet.Web/bin
+Spreadsheet.Repository/bin
+Spreadsheet.Domain/bin
+Spreadsheet.Web/obj
+Spreadsheet.Repository/obj
+Spreadsheet.Domain/obj
+Spreadsheet/packages
